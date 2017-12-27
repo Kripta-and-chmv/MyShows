@@ -1,13 +1,26 @@
 package com.example.myfirstapp;
 
+import android.app.AlarmManager;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.BitmapFactory;
+import android.icu.util.Calendar;
+import android.os.SystemClock;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -15,6 +28,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.Hashtable;
 
 public class SeriesList extends AppCompatActivity {
@@ -28,7 +42,7 @@ public class SeriesList extends AppCompatActivity {
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         try {
             JSONArray shows = new JSONObject(message).getJSONArray("result");
-            final Hashtable<String, String> namesId= new Hashtable<String, String>();
+            final Hashtable<String, String> namesId = new Hashtable<String, String>();
 
             for(int i = 0; i < shows.length(); ++i)
             {
@@ -79,8 +93,37 @@ public class SeriesList extends AppCompatActivity {
                     httpThread.start();
                 }
             });
+
+            EditText inputSearch = (EditText) findViewById(R.id.inputSearch);
+            inputSearch.addTextChangedListener(new TextWatcher() {
+
+                @Override
+                public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
+                    // When user changed the Text
+                    adapter.getFilter().filter(cs);
+                }
+
+                @Override
+                public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
+                                              int arg3) {
+                    // TODO Auto-generated method stub
+
+                }
+
+                @Override
+                public void afterTextChanged(Editable arg0) {
+                    // TODO Auto-generated method stub
+                }
+            });
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    public void allShows(View view)
+    {
+        final Intent intent = new Intent(this, AddNewShow.class);
+        startActivity(intent);
     }
 }

@@ -20,6 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:maxWidth="250dp"
             android:text="Country"
             app:layout_constraintBaseline_toBaselineOf="@+id/txtCountry"
             app:layout_constraintStart_toEndOf="@+id/txtCountry" />
@@ -49,6 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
+            android:maxWidth="250dp"
             android:text="Title"
             app:layout_constraintStart_toEndOf="@+id/txtTitle"
             app:layout_constraintTop_toBottomOf="@+id/showLogo" />
@@ -79,6 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:maxWidth="250dp"
             android:text="Season Amount"
             app:layout_constraintBaseline_toBaselineOf="@+id/txtTotalSeasons"
             app:layout_constraintStart_toEndOf="@+id/txtTotalSeasons" />
@@ -98,6 +101,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:maxWidth="250dp"
             android:text="Started"
             app:layout_constraintBaseline_toBaselineOf="@+id/txtStarted"
             app:layout_constraintStart_toEndOf="@+id/txtStarted" />
@@ -117,6 +121,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:maxWidth="250dp"
             android:text="Status"
             app:layout_constraintBaseline_toBaselineOf="@+id/txtStatus"
             app:layout_constraintStart_toEndOf="@+id/txtStatus" />
@@ -136,6 +141,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:maxWidth="250dp"
             android:text="Ended"
             app:layout_constraintBaseline_toBaselineOf="@+id/txtEnded"
             app:layout_constraintStart_toEndOf="@+id/txtEnded" />

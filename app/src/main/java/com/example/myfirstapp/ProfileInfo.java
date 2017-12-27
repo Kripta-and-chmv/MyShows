@@ -21,13 +21,13 @@ public class ProfileInfo extends AppCompatActivity {
         JSONObject user = DisplayMessageActivity.profile.optJSONObject("result").optJSONObject("user");
         JSONObject stats = DisplayMessageActivity.profile.optJSONObject("result").optJSONObject("stats");
         TextView username = findViewById(R.id.username);
-        username.setText("Username: " + user.optString("login"));
+        username.setText(user.optString("login"));
         TextView episodes = findViewById(R.id.totalEpisodes);
-        episodes.setText("Watched episodes: " + stats.optString("watchedEpisodes"));
+        episodes.setText(stats.optString("watchedEpisodes"));
         TextView hours = findViewById(R.id.wastedHours);
-        hours.setText("Hours wasted: " + stats.optString("totalHours"));
+        hours.setText(stats.optString("totalHours"));
         TextView days = findViewById(R.id.wastedDays);
-        days.setText("Hours wasted: " + stats.optString("watchedDays"));
+        days.setText(stats.optString("watchedDays"));
 
         ImageView avatar = (ImageView)findViewById(R.id.avatarImg);
         DownloadImageWithURLTask downloadTask = new DownloadImageWithURLTask(avatar);

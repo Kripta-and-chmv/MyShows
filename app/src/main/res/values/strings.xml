@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">My First App</string>
+    <string name="app_name">MyShows</string>
     <string name="username">Your username</string>
     <string name="button_login">Login</string>
     <string name="btn_profile">Profile</string>
-    <string name="btn_series">Series</string>
+    <string name="btn_series">My Shows</string>
     <string name="btn_goback">Back</string>
 </resources>
