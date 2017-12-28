@@ -8,9 +8,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-/**
- * Created by ubastard on 21.12.17.
- */
+
 
 public class Requests {
     private Requests() {};

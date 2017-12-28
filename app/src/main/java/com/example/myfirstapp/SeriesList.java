@@ -8,7 +8,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.icu.util.Calendar;
+import android.media.RingtoneManager;
 import android.os.SystemClock;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -126,4 +128,5 @@ public class SeriesList extends AppCompatActivity {
         final Intent intent = new Intent(this, AddNewShow.class);
         startActivity(intent);
     }
+
 }

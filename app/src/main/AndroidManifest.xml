@@ -26,7 +26,11 @@
         <activity android:name=".ProfileInfo" />
         <activity android:name=".SeriesList" />
         <activity android:name=".Show" />
-        <activity android:name=".AddNewShow"></activity>
+        <activity android:name=".AddNewShow" />
+
+        <receiver android:name=".NotificationPublisher" />
+
+        <activity android:name=".AddEvent"></activity>
     </application>
 
 </manifest>

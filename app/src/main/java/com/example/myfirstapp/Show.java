@@ -96,30 +96,17 @@ public class Show extends AppCompatActivity {
         return "Unknown";
     }
 
-    public void setEvent(View view) throws ParseException {
+    public void setEvent(View view) throws ParseException, JSONException {
         TextView ended = findViewById(R.id.showEnded);
         TextView title = findViewById(R.id.showTitle);
-        DateFormat format = new SimpleDateFormat("MMM/dd/yyyy");
-        Date date = format.parse(ended.getText().toString());
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(date);
-        int month = cal.get(Calendar.MONTH);
-        int day = cal.get(Calendar.DAY_OF_MONTH);
-        int year = cal.get(Calendar.YEAR);
 
-        Calendar beginTime = Calendar.getInstance();
-        beginTime.set(year, month, day,
-                 15, 30);
-        Calendar endTime = Calendar.getInstance();
-        endTime.set(year, month, day,
-                16, 30);
+        Intent intent = new Intent(this, AddEvent.class);
 
-        Intent intent = new Intent(Intent.ACTION_INSERT)
-                .setData(CalendarContract.Events.CONTENT_URI)
-                .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginTime.getTimeInMillis())
-                .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis())
-                .putExtra(CalendarContract.Events.CALENDAR_ID, 3)
-                .putExtra(CalendarContract.Events.TITLE, "New episode of " + title.getText().toString());
+        JSONObject data = new JSONObject();
+        data.put("date", ended.getText().toString());
+        data.put("title", title.getText().toString());
+
+        intent.putExtra(MainActivity.EXTRA_MESSAGE, data.toString());
         startActivity(intent);
     }
 }
